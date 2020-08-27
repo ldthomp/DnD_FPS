@@ -15,6 +15,10 @@ public class WeaponZoom : MonoBehaviour
 
     RigidbodyFirstPersonController fpsController;
 
+    void Start()
+    {
+        fpsController = GetComponent<RigidbodyFirstPersonController>();
+    }
     void Update()
     {
         ChangeFieldOfView();

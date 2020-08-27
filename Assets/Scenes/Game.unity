@@ -1222,6 +1222,10 @@ PrefabInstance:
       propertyPath: damage
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 610384074, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 510339129}
     - target: {fileID: 1401631542076874898, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1241,6 +1245,16 @@ PrefabInstance:
         type: 3}
       propertyPath: fieldOfView
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631128491787681655, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 1448876608}
+    - target: {fileID: 5631128491787681655, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: zoomedInFOV
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4832734361749986764, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
@@ -1859,6 +1873,25 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 82096aab38f01cb40a1cbf8629a810ba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93e86b57e56570d46814839867bf9a52, type: 3}
+--- !u!1 &510339122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 347068345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &510339129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510339122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7473d75622e19e40ad52ac85edf1e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 10
 --- !u!4 &532445783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5d2e4237b4429b34fae4c9eb3cd9efd5,
@@ -4980,6 +5013,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1575018403}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1448876608 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 347068345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488541074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,7 +5855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.41960785}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.41960785}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

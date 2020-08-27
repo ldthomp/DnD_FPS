@@ -14,6 +14,7 @@ public class Weapons : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
 
+ 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -24,8 +25,17 @@ public class Weapons : MonoBehaviour
 
     private void Shoot()
     {
-        PlayShootingEffect();
-        ProcessRaycast();
+        print("ammo" + ammoSlot.GetCurrentAmmo());
+        if (ammoSlot.GetCurrentAmmo() >=1)
+        {
+            PlayShootingEffect();
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo();
+        }
+        else
+        {
+            Debug.Log("shooting disabled. out of ammo");
+        }
 
     }
 
