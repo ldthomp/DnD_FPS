@@ -40,6 +40,10 @@ public class EnemyAI : MonoBehaviour
             navMeshAgent.SetDestination(target.position);
         }
     }
+    public void OnDamageTaken()
+    {
+        isProvoked = true;
+    }
 
     private void EngageTarget()
     {

@@ -9,9 +9,10 @@ public class Weapons : MonoBehaviour
 {
     [SerializeField] Camera FPcamera;
     [SerializeField] float range = 100f;
-    [SerializeField] float damage = 1f;
+    [SerializeField] float damage = 25f;
     [SerializeField] ParticleSystem arrowShot;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] Ammo ammoSlot;
 
     void Update()
     {

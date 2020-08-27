@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         if (target == null) return;
+        Debug.Log("player to take health");
         target.TakeDamage(damage);
     }
 }
