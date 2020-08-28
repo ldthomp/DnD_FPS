@@ -10,27 +10,46 @@ public class Weapons : MonoBehaviour
     [SerializeField] Camera FPcamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 25f;
-    [SerializeField] ParticleSystem arrowShot;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] Rigidbody weaponProjectile;
+    [SerializeField] Transform weaponProjectileParent;
+    [SerializeField] float timeBetweenShots = 0.5f;
 
- 
+    //[SerializeField] ParticleSystem arrowShot; Taken out for bow weapon. May need back for other weapons
+    bool canShoot = true;
+
+    void Start()
+    {
+        
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Display the explosion radius when selected
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
-            Shoot();
+             StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
-        print("ammo" + ammoSlot.GetCurrentAmmo());
+        canShoot = false;
         if (ammoSlot.GetCurrentAmmo() >=1)
         {
-            PlayShootingEffect();
+            Instantiate(weaponProjectile, weaponProjectileParent.position, Quaternion.LookRotation(Vector3.forward));
+            //PlayShootingEffect(); temp took out - could serializefield to instantiate different effect for each weapon
             ProcessRaycast();
+            weaponProjectile.AddForce(transform.forward * range);
             ammoSlot.ReduceCurrentAmmo();
+            yield return new WaitForSeconds(timeBetweenShots);
+            Destroy(weaponProjectile.gameObject, 1f);
+            canShoot = true;
         }
         else
         {
@@ -39,10 +58,11 @@ public class Weapons : MonoBehaviour
 
     }
 
-    private void PlayShootingEffect()
-    {
-        arrowShot.Play();
-    }
+
+    //private void PlayShootingEffect()
+    //{
+    //    arrowShot.Play();
+    //}
 
     private void ProcessRaycast()
     {
