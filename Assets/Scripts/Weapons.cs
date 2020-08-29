@@ -12,9 +12,10 @@ public class Weapons : MonoBehaviour
     [SerializeField] float damage = 25f;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
-    [SerializeField] Rigidbody weaponProjectile;
-    [SerializeField] Transform weaponProjectileParent;
+    [SerializeField] GameObject weaponProjectile;
+    [SerializeField] Transform weaponProjectileSpawn;
     [SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] float shootForce = 20f;
 
     //[SerializeField] ParticleSystem arrowShot; Taken out for bow weapon. May need back for other weapons
     bool canShoot = true;
@@ -42,13 +43,11 @@ public class Weapons : MonoBehaviour
         canShoot = false;
         if (ammoSlot.GetCurrentAmmo() >=1)
         {
-            Instantiate(weaponProjectile, weaponProjectileParent.position, Quaternion.LookRotation(Vector3.forward));
+            FireProjectile();
             //PlayShootingEffect(); temp took out - could serializefield to instantiate different effect for each weapon
             ProcessRaycast();
-            weaponProjectile.AddForce(transform.forward * range);
             ammoSlot.ReduceCurrentAmmo();
             yield return new WaitForSeconds(timeBetweenShots);
-            Destroy(weaponProjectile.gameObject, 1f);
             canShoot = true;
         }
         else
@@ -56,6 +55,12 @@ public class Weapons : MonoBehaviour
             Debug.Log("shooting disabled. out of ammo");
         }
 
+        void FireProjectile()
+        {
+            GameObject getProjectile = Instantiate(weaponProjectile, weaponProjectileSpawn.position, Quaternion.identity);
+            Rigidbody rigidBody = getProjectile.GetComponent<Rigidbody>();
+            rigidBody.velocity = FPcamera.transform.forward * shootForce;
+        }
     }
 
 

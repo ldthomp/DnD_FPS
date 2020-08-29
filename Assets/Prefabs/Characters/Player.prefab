@@ -231,10 +231,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: ed3898d294d59e44dada2e18ff29249e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.17615633
   m_Height: 1.6
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.028604018, y: 0, z: -6.6698744e-11}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7473d75622e19e40ad52ac85edf1e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoAmount: 500
 --- !u!1 &1553861103
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 510339129}
+    - target: {fileID: 4199543107805050302, guid: 5b7b1e40638171148aadf2fd2c9e45de,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4415978283989723824, guid: 5b7b1e40638171148aadf2fd2c9e45de,
         type: 3}
       propertyPath: FPCamera
@@ -466,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 9078915996030847243, guid: 5b7b1e40638171148aadf2fd2c9e45de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b7b1e40638171148aadf2fd2c9e45de, type: 3}
@@ -493,20 +498,30 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 11400004}
+    - target: {fileID: 717216409101080412, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 717216409101080412, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 717216409101080412, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4174567086465089228, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
       propertyPath: m_Name
       value: Bow 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4174567086465089228, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4174567086465377004, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.152
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4174567086465377004, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
@@ -516,7 +531,7 @@ PrefabInstance:
     - target: {fileID: 4174567086465377004, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.348
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4174567086465377004, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
@@ -558,11 +573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 4174567086467276814, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 68d2ca5eabd1de34485a77ccd23c3647, type: 2}
     - target: {fileID: 4989941239240298587, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
       propertyPath: FPcamera
@@ -573,11 +583,12 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 510339129}
-    - target: {fileID: 7552703606502936164, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
+    - target: {fileID: 4989941239240298587, guid: 9b3ef806c98dd08438941ace3a8ec4ff,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: weaponProjectile
       value: 
-      objectReference: {fileID: 2100000, guid: 68d2ca5eabd1de34485a77ccd23c3647, type: 2}
+      objectReference: {fileID: 5471487149696220072, guid: fc038b488e2f5654d8690885264714fd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3ef806c98dd08438941ace3a8ec4ff, type: 3}
 --- !u!4 &1142870687648712329 stripped
@@ -607,6 +618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bow 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655620371340949871, guid: c7f5492123cae2040839a844ba9eb116,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655620371341305167, guid: c7f5492123cae2040839a844ba9eb116,
         type: 3}
