@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5251889116321044256}
   m_Layer: 0
   m_Name: FireboltParticle
-  m_TagString: Untagged
+  m_TagString: FireSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3884,7 +3884,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4977,6 +4977,21 @@ PrefabInstance:
     - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
         type: 3}
       propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
+        type: 3}
+      propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

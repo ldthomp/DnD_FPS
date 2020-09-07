@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour
     Rigidbody myBody;
     [SerializeField] float lifeTimer = 2f;
     [SerializeField] float timer;
-    [SerializeField] Vector3 projecticleSpawn;
+    [SerializeField] float damage = 25f;
     bool hitSomething = false;
 
     void Start()
@@ -39,9 +39,14 @@ public class Arrow : MonoBehaviour
         {
             hitSomething = true;
             Stick();
+            EnemyHealth target = collision.transform.GetComponent<EnemyHealth>();
+            if (target == null) return;
+            target.TakeDamage(damage);
+
         }
 
     }
+
 
     private void Stick()
     {

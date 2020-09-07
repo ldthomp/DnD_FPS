@@ -9,8 +9,6 @@ public class Weapons : MonoBehaviour
 {
     [SerializeField] Camera FPcamera;
     [SerializeField] float range = 100f;
-    [SerializeField] float damage = 25f;
-    [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] GameObject weaponProjectile;
     [SerializeField] Transform weaponProjectileSpawn;
@@ -44,8 +42,6 @@ public class Weapons : MonoBehaviour
         if (ammoSlot.GetCurrentAmmo() >=1)
         {
             FireProjectile();
-            //PlayShootingEffect(); temp took out - could serializefield to instantiate different effect for each weapon
-            ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo();
             yield return new WaitForSeconds(timeBetweenShots);
             canShoot = true;
@@ -61,34 +57,5 @@ public class Weapons : MonoBehaviour
             Rigidbody rigidBody = getProjectile.GetComponent<Rigidbody>();
             rigidBody.velocity = FPcamera.transform.forward * shootForce;
         }
-    }
-
-
-    //private void PlayShootingEffect()
-    //{
-    //    arrowShot.Play();
-    //}
-
-    private void ProcessRaycast()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(FPcamera.transform.position, FPcamera.transform.forward, out hit, range))
-        {
-            CreateHitImpact(hit);
-            //todo add some hit effect
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;
-            target.TakeDamage(damage);
-        }
-        else
-        {
-            return;
-        }
-    }
-
-    private void CreateHitImpact(RaycastHit hit)
-    {
-        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impact, .2f);
     }
 }

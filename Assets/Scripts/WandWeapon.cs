@@ -12,15 +12,8 @@ public class WandWeapon : MonoBehaviour
     [SerializeField] Ammo manaSlot;
     [SerializeField] float timeBetweenShots = 0.5f;
 
-
-    //[SerializeField] ParticleSystem arrowShot; Taken out for bow weapon. May need back for other weapons
     bool canShoot = true;
 
-    void Start()
-    {
-
-    
-    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canShoot == true)
@@ -46,10 +39,9 @@ public class WandWeapon : MonoBehaviour
 
         void FireProjectile()
         {
-           GameObject spell = Instantiate(wandSpellPrefab, wandParent.position, wandParent.rotation);
+            GameObject spell = Instantiate(wandSpellPrefab, wandParent.position, wandParent.rotation);
             spell.transform.parent = wandParent;
             Destroy(spell, 2f);
         }
     }
-
 }

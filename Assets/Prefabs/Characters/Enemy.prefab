@@ -228,7 +228,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ad04042c5b3c0f94ab15125f0d5797ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 60
+  spellDamage: {fileID: 345233863182060692, guid: 58f62522a651aba4c989ed5408723256,
+    type: 3}
 --- !u!114 &2884846726590809718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  chaseRange: 15
-  turnSpeed: 5
+  chaseRange: 10
+  turnSpeed: 100
   isProvoked: 0
