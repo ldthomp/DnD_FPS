@@ -10,6 +10,7 @@ public class Weapons : MonoBehaviour
     [SerializeField] Camera FPcamera;
     [SerializeField] float range = 100f;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] GameObject weaponProjectile;
     [SerializeField] Transform weaponProjectileSpawn;
     [SerializeField] float timeBetweenShots = 0.5f;
@@ -17,7 +18,10 @@ public class Weapons : MonoBehaviour
 
     //[SerializeField] ParticleSystem arrowShot; Taken out for bow weapon. May need back for other weapons
     bool canShoot = true;
-
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
     void Start()
     {
         
@@ -32,17 +36,17 @@ public class Weapons : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
-             StartCoroutine(Shoot());
+            StartCoroutine(Shoot());
         }
     }
 
     IEnumerator Shoot()
     {
         canShoot = false;
-        if (ammoSlot.GetCurrentAmmo() >=1)
+        if (ammoSlot.GetCurrentAmmo(ammoType) >= 1)
         {
             FireProjectile();
-            ammoSlot.ReduceCurrentAmmo();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
             yield return new WaitForSeconds(timeBetweenShots);
             canShoot = true;
         }

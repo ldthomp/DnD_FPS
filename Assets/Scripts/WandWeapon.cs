@@ -11,8 +11,13 @@ public class WandWeapon : MonoBehaviour
     [SerializeField] Transform wandParent;
     [SerializeField] Ammo manaSlot;
     [SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] AmmoType ammoType;
+    [SerializeField] bool canShoot = true;
 
-    bool canShoot = true;
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
 
     void Update()
     {
@@ -25,16 +30,12 @@ public class WandWeapon : MonoBehaviour
     IEnumerator ProcessFire()
     {
         canShoot = false;
-        if (manaSlot.GetCurrentAmmo() >= 1)
+        if (manaSlot.GetCurrentAmmo(ammoType) >= 1)
         {
             FireProjectile();
-            manaSlot.ReduceCurrentAmmo();
+            manaSlot.ReduceCurrentAmmo(ammoType);
             yield return new WaitForSeconds(timeBetweenShots);
             canShoot = true;
-        }
-        else
-        {
-            Debug.Log("shooting disabled. out of ammo");
         }
 
         void FireProjectile()

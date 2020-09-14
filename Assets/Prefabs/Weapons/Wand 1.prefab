@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &345233862886675023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 345233862886675024}
-  m_Layer: 0
-  m_Name: Spell Parent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &345233862886675024
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345233862886675023}
-  m_LocalRotation: {x: -0.07833849, y: 0.0014751056, z: 0.0015123046, w: 0.9969246}
-  m_LocalPosition: {x: -0.67, y: 0.28, z: 1.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9163693095113535473}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -8.986, y: 0.157, z: 0.162}
 --- !u!1 &3322692259287725873
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9163693095113535473
 Transform:
   m_ObjectHideFlags: 0
@@ -60,7 +30,6 @@ Transform:
   m_LocalScale: {x: 0.23173667, y: 0.23173667, z: 0.23173667}
   m_Children:
   - {fileID: 5796471406592271107}
-  - {fileID: 345233862886675024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 9.349, y: 1.039, z: 6.3040004}
@@ -78,10 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wandSpellPrefab: {fileID: 5251889116338989762, guid: 645a80ff739c9d449b3838b24f031dee,
     type: 3}
-  wandParent: {fileID: 345233862886675024}
+  wandParent: {fileID: 0}
   manaSlot: {fileID: 0}
   timeBetweenShots: 2
-  damage: 25
+  ammoType: 0
+  canShoot: 1
 --- !u!114 &345233863182060692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2092bedc793c64cbd92ab119fdc0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 2
 --- !u!1 &5796471406592245539
 GameObject:
   m_ObjectHideFlags: 0

@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -949,7 +949,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 30
         minScalar: 10
         maxCurve:
           serializedVersion: 2
@@ -3772,7 +3772,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3875,7 +3875,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 1000
+    minKillSpeed: 100
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
@@ -4982,7 +4982,7 @@ PrefabInstance:
     - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
         type: 3}
       propertyPath: CollisionModule.type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5153488358049139091, guid: 58f8ee743f8063d4f948bf0cb6ff10c9,
         type: 3}
