@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718d51352a818794f88dde64af227a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoAmmount: 5
+  ammoType: 0
 --- !u!135 &576815085127700923
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -7,6 +7,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float hitPoints = 100f;
     [SerializeField] SpellDamage spellDamage;
 
+    bool isDead = false;
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void TakeDamage (float damage)
     {
         BroadcastMessage("OnDamageTaken");
@@ -15,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
         if(hitPoints <= 0f)
         {
             print("destroying" + gameObject.name);
-            Destroy(gameObject);
+            Die();
         }
     }
     void OnParticleCollision(GameObject collision)
@@ -25,5 +32,11 @@ public class EnemyHealth : MonoBehaviour
             float damage = spellDamage.SetDamage();
             TakeDamage(damage);
         }
+    }
+    private void Die()
+    {
+        if (isDead) return; 
+        isDead = true;
+        GetComponent<Animator>().SetTrigger("Die");
     }
 }
