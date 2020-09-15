@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1626946404}
   - component: {fileID: 1626946406}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: Sword 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29422405, y: 1.6322477, z: 0.066441}
-  m_Center: {x: -0.00000009733387, y: 0.5443304, z: 0.0000039067468}
+  m_Size: {x: 0.29422405, y: 1.7919441, z: 0.066441}
+  m_Center: {x: -0.00000009730276, y: 0.9918343, z: 0.0000039056245}
 --- !u!95 &1626946404
 Animator:
   serializedVersion: 3
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0560af38a3ff1da48a915a54a3b363d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 75
