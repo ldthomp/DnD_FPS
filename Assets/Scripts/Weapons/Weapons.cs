@@ -58,7 +58,6 @@ public class Weapons : MonoBehaviour
         void FireProjectile()
         {
             GameObject getProjectile = Instantiate(weaponProjectile, weaponProjectileSpawn.position, Quaternion.identity);
-            Debug.Break();
             Rigidbody rigidBody = getProjectile.GetComponent<Rigidbody>();
             rigidBody.velocity = FPcamera.transform.forward * shootForce;
         }
