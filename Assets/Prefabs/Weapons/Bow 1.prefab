@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4174567086465377004
 Transform:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   range: 100
   ammoSlot: {fileID: 0}
   ammoType: 0
-  weaponProjectile: {fileID: 5471487149696220072, guid: fc038b488e2f5654d8690885264714fd,
+  weaponProjectile: {fileID: 1037367305368628033, guid: b165c3953fbc4d44e8c2fb0438fa0415,
     type: 3}
   weaponProjectileSpawn: {fileID: 717216409101080412}
   timeBetweenShots: 0.5
