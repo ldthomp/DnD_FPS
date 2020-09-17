@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3322692259287725873}
-  m_LocalRotation: {x: 0.08186562, y: 0.0045375293, z: 0.05406651, w: 0.99516547}
+  m_LocalRotation: {x: 0.0818652, y: 0.004542233, z: 0.054062072, w: 0.99516577}
   m_LocalPosition: {x: 0.216, y: 0.086, z: 0.426}
   m_LocalScale: {x: 0.23173667, y: 0.23173667, z: 0.23173667}
   m_Children:
@@ -50,7 +50,7 @@ MonoBehaviour:
   wandParent: {fileID: 0}
   manaSlot: {fileID: 0}
   timeBetweenShots: 2
-  ammoType: 0
+  ammoType: 1
   canShoot: 1
 --- !u!114 &345233863182060692
 MonoBehaviour:
